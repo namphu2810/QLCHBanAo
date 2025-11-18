@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý chuỗi cửa hàng</title>
+    <style>
+        :root {
+            --bg: #F0EAD6; /* nền */
+            --brand: #00416A; /* xanh đậm */
+            --muted: #D4C7A1;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--bg);
+            color: #0b2b3a;
+        }
+
+        .layout {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background-color: var(--brand);
+            color: white;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .sidebar h2 {
+                text-align: center;
+                margin: 0 0 12px 0;
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.06);
+                letter-spacing: 1px;
+            }
+
+        .menu-item {
+            padding: 14px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            user-select: none;
+        }
+
+            .menu-item:hover, .menu-item.active {
+                background-color: #00384f;
+            }
+
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            margin-bottom: 18px;
+        }
+
+        .title {
+            font-size: 20px;
+            color: var(--brand);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+            table th, table td {
+                padding: 10px 12px;
+                border-bottom: 1px solid #eee;
+                text-align: left;
+            }
+
+            table th {
+                background-color: var(--muted);
+                color: var(--brand);
+                font-weight: 700;
+            }
+
+        button {
+            background-color: var(--brand);
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+            gap: 16px;
+        }
+
+        .dash-box {
+            background: #ffffff;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--brand);
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .sidebar {
+                width: 72px
+            }
+
+            .menu-item {
+                font-size: 12px;
+                padding: 12px;
+                justify-content: center
+            }
+
+            .sidebar h2 {
+                display: none
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="layout">
+        <!-- Sidebar -->
+        <nav class="sidebar" aria-label="Chức năng chính">
+            <h2>QUẢN LÝ</h2>
+            <div class="menu-item active" data-target="home" tabindex="0">🏠<span class="label">Trang chủ</span></div>
+            <div class="menu-item" data-target="store" tabindex="0">🏪<span class="label">Quản lý cửa hàng</span></div>
+            <div class="menu-item" data-target="product" tabindex="0">📦<span class="label">Quản lý sản phẩm</span></div>
+            <div class="menu-item" data-target="customer" tabindex="0">🧍‍♂️<span class="label">Quản lý khách hàng</span></div>
+            <div class="menu-item" data-target="invoice" tabindex="0">🧾<span class="label">Quản lý hóa đơn bán hàng</span></div>
+            <div class="menu-item" data-target="warehouse" tabindex="0">📥<span class="label">Quản lý xuất - nhập - tồn kho</span></div>
+            <div class="menu-item" data-target="user" tabindex="0">👤<span class="label">Quản lý người dùng</span></div>
+            <div class="menu-item" data-target="report" tabindex="0">📊<span class="label">Thống kê - Báo cáo</span></div>
+        </nav>
+
+        <!-- Content -->
+        <main class="content">
+
+            <!-- Dashboard -->
+            <section id="home" class="card">
+                <div class="title">Dashboard</div>
+                <div class="dashboard-grid">
+                    <div class="dash-box">Tổng sản phẩm<br><small>120</small></div>
+                    <div class="dash-box">Tổng cửa hàng<br><small>8</small></div>
+                    <div class="dash-box">Tổng khách hàng<br><small>310</small></div>
+                    <div class="dash-box">Hóa đơn hôm nay<br><small>45</small></div>
+                    <div class="dash-box">Tồn kho<br><small>2,450 SP</small></div>
+                    <div class="dash-box">Người dùng<br><small>15</small></div>
+                </div>
+            </section>
+
+            <!-- Quản lý cửa hàng -->
+            <section id="store" class="card" style="display:none;">
+                <div class="title">Quản lý cửa hàng</div>
+                <button>Thêm cửa hàng</button>
+                <table>
+                    <thead>
+                        <tr><th>Mã cửa hàng</th><th>Tên chi nhánh</th><th>Địa chỉ</th><th>Quản lý</th><th>Hành động</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>CH001</td><td>Quận 1</td><td>123 Lê Lợi</td><td>Nguyễn A</td><td><button>Sửa</button></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Quản lý sản phẩm -->
+            <section id="product" class="card" style="display:none;">
+                <div class="title">Quản lý sản phẩm</div>
+                <button>Thêm sản phẩm</button>
+                <table>
+                    <thead>
+                        <tr><th>Mã SP</th><th>Tên sản phẩm</th><th>Đơn giá</th><th>Số lượng</th><th>Hành động</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>SP001</td><td>Áo thun FitPro</td><td>250,000₫</td><td>120</td><td><button>Sửa</button></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Quản lý khách hàng -->
+            <section id="customer" class="card" style="display:none;">
+                <div class="title">Quản lý khách hàng</div>
+                <button>Thêm khách hàng</button>
+                <table>
+                    <thead>
+                        <tr><th>Mã KH</th><th>Tên khách hàng</th><th>SĐT</th><th>Email</th><th>Hành động</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>KH001</td><td>Trần B</td><td>0987xxx</td><td>tranb@mail.com</td><td><button>Sửa</button></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Quản lý hóa đơn -->
+            <section id="invoice" class="card" style="display:none;">
+                <div class="title">Quản lý hóa đơn bán hàng</div>
+                <button>Thêm hóa đơn</button>
+                <table>
+                    <thead>
+                        <tr><th>Mã HĐ</th><th>Khách hàng</th><th>Ngày bán</th><th>Tổng tiền</th><th>Hành động</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>HD001</td><td>Trần B</td><td>2025-11-18</td><td>1,200,000₫</td><td><button>Xem</button></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Quản lý kho -->
+            <section id="warehouse" class="card" style="display:none;">
+                <div class="title">Quản lý xuất - nhập - tồn kho</div>
+                <button>Thêm phiếu</button>
+                <table>
+                    <thead>
+                        <tr><th>Mã phiếu</th><th>Loại</th><th>Ngày</th><th>Số lượng</th><th>Hành động</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>PX001</td><td>Nhập</td><td>2025-11-17</td><td>500</td><td><button>Xem</button></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Quản lý người dùng -->
+            <section id="user" class="card" style="display:none;">
+                <div class="title">Quản lý người dùng</div>
+                <button>Thêm người dùng</button>
+                <table>
+                    <thead>
+                        <tr><th>ID</th><th>Tên người dùng</th><th>Email</th><th>Vai trò</th><th>Hành động</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>U001</td><td>admin</td><td>admin@mail.com</td><td>Quản trị viên</td><td><button>Sửa</button></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Thống kê - báo cáo -->
+            <section id="report" class="card" style="display:none;">
+                <div class="title">Thống kê - Báo cáo</div>
+                <p>Biểu đồ và báo cáo tổng hợp doanh thu, hàng tồn, khách hàng...</p>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+  // Hiển thị trang theo id và cập nhật active class
+  function showPage(pageId, element) {
+    // ẩn tất cả section trong content
+    document.querySelectorAll('main .card, main section').forEach(sec => {
+      sec.style.display = 'none';
+    });
+
+    // hiển thị section mục tiêu
+    const target = document.getElementById(pageId);
+    if (target) target.style.display = 'block';
+
+    // cập nhật active trên menu
+    document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
+    if (element) element.classList.add('active');
+  }
+
+  // Gắn sự kiện cho các menu-item (để hỗ trợ click + keyboard)
+  document.querySelectorAll('.menu-item').forEach(item => {
+    item.addEventListener('click', () => showPage(item.getAttribute('data-target'), item));
+    item.addEventListener('keypress', (e) => { if(e.key === 'Enter' || e.key === ' ') showPage(item.getAttribute('data-target'), item); });
+  });
+
+  // Khi load trang, đảm bảo trang home hiển thị
+  document.addEventListener('DOMContentLoaded', () => {
+    const active = document.querySelector('.menu-item.active');
+    if(active) {
+      showPage(active.getAttribute('data-target'), active);
+    } else {
+      // fallback
+      const first = document.querySelector('.menu-item');
+      if(first) showPage(first.getAttribute('data-target'), first);
+    }
+  });
+    </script>
+
+</body>
+</html>
