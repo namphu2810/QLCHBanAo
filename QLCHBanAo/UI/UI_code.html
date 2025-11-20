@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quản lý chuỗi cửa hàng</title>
+
+    <!-- Bootstrap CSS (thêm mới) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         :root {
-            --bg: #F0EAD6; /* nền */
-            --brand: #00416A; /* xanh đậm */
+            --bg: #F0EAD6;
+            --brand: #00416A;
             --muted: #D4C7A1;
         }
 
@@ -35,24 +39,24 @@
 
             .sidebar h2 {
                 text-align: center;
-                margin: 0 0 12px 0;
-                padding: 12px 0;
-                border-bottom: 1px solid rgba(255,255,255,0.06);
-                letter-spacing: 1px;
+                padding-bottom: 10px;
+                margin-bottom: 12px;
+                border-bottom: 1px solid rgba(255,255,255,0.15);
             }
 
         .menu-item {
             padding: 14px 20px;
             cursor: pointer;
             font-weight: 600;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
             display: flex;
             align-items: center;
             gap: 10px;
             user-select: none;
         }
 
-            .menu-item:hover, .menu-item.active {
+            .menu-item:hover,
+            .menu-item.active {
                 background-color: #00384f;
             }
 
@@ -65,14 +69,14 @@
 
         .card {
             background: white;
-            padding: 18px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             margin-bottom: 18px;
         }
 
         .title {
-            font-size: 20px;
+            font-size: 22px;
             color: var(--brand);
             margin-bottom: 12px;
             font-weight: 700;
@@ -81,7 +85,6 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
             font-size: 14px;
         }
 
@@ -109,53 +112,38 @@
 
         .dashboard-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 16px;
         }
 
         .dash-box {
-            background: #ffffff;
+            background: white;
             padding: 16px;
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-            font-size: 16px;
             font-weight: 700;
             color: var(--brand);
         }
-
-        /* Responsive */
-        @media (max-width: 800px) {
-            .sidebar {
-                width: 72px
-            }
-
-            .menu-item {
-                font-size: 12px;
-                padding: 12px;
-                justify-content: center
-            }
-
-            .sidebar h2 {
-                display: none
-            }
-        }
     </style>
+
 </head>
 <body>
 
     <div class="layout">
+
         <!-- Sidebar -->
-        <nav class="sidebar" aria-label="Chức năng chính">
+        <nav class="sidebar">
             <h2>QUẢN LÝ</h2>
-            <div class="menu-item active" data-target="home" tabindex="0">🏠<span class="label">Trang chủ</span></div>
-            <div class="menu-item" data-target="store" tabindex="0">🏪<span class="label">Quản lý cửa hàng</span></div>
-            <div class="menu-item" data-target="product" tabindex="0">📦<span class="label">Quản lý sản phẩm</span></div>
-            <div class="menu-item" data-target="customer" tabindex="0">🧍‍♂️<span class="label">Quản lý khách hàng</span></div>
-            <div class="menu-item" data-target="invoice" tabindex="0">🧾<span class="label">Quản lý hóa đơn bán hàng</span></div>
-            <div class="menu-item" data-target="warehouse" tabindex="0">📥<span class="label">Quản lý xuất - nhập - tồn kho</span></div>
-            <div class="menu-item" data-target="user" tabindex="0">👤<span class="label">Quản lý người dùng</span></div>
-            <div class="menu-item" data-target="report" tabindex="0">📊<span class="label">Thống kê - Báo cáo</span></div>
+
+            <div class="menu-item active" data-target="home">🏠 Trang chủ</div>
+            <div class="menu-item" data-target="store">🏪 Quản lý cửa hàng</div>
+            <div class="menu-item" data-target="product">📦 Quản lý sản phẩm</div>
+            <div class="menu-item" data-target="customer">🧍‍♂️ Quản lý khách hàng</div>
+            <div class="menu-item" data-target="invoice">🧾 Hóa đơn bán hàng</div>
+            <div class="menu-item" data-target="warehouse">📥 Xuất - nhập - tồn kho</div>
+            <div class="menu-item" data-target="user">👤 Quản lý người dùng</div>
+            <div class="menu-item" data-target="report">📊 Thống kê - Báo cáo</div>
         </nav>
 
         <!-- Content -->
@@ -169,7 +157,7 @@
                     <div class="dash-box">Tổng cửa hàng<br><small>8</small></div>
                     <div class="dash-box">Tổng khách hàng<br><small>310</small></div>
                     <div class="dash-box">Hóa đơn hôm nay<br><small>45</small></div>
-                    <div class="dash-box">Tồn kho<br><small>2,450 SP</small></div>
+                    <div class="dash-box">Tồn kho<br><small>2450 SP</small></div>
                     <div class="dash-box">Người dùng<br><small>15</small></div>
                 </div>
             </section>
@@ -178,9 +166,10 @@
             <section id="store" class="card" style="display:none;">
                 <div class="title">Quản lý cửa hàng</div>
                 <button>Thêm cửa hàng</button>
+
                 <table>
                     <thead>
-                        <tr><th>Mã cửa hàng</th><th>Tên chi nhánh</th><th>Địa chỉ</th><th>Quản lý</th><th>Hành động</th></tr>
+                        <tr><th>Mã</th><th>Tên</th><th>Địa chỉ</th><th>Quản lý</th><th>Hành động</th></tr>
                     </thead>
                     <tbody>
                         <tr><td>CH001</td><td>Quận 1</td><td>123 Lê Lợi</td><td>Nguyễn A</td><td><button>Sửa</button></td></tr>
@@ -191,38 +180,55 @@
             <!-- Quản lý sản phẩm -->
             <section id="product" class="card" style="display:none;">
                 <div class="title">Quản lý sản phẩm</div>
-                <button>Thêm sản phẩm</button>
-                <table>
+
+                <!-- Nút mở modal -->
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal">
+                    Thêm sản phẩm
+                </button>
+
+                <table class="mt-3">
                     <thead>
-                        <tr><th>Mã SP</th><th>Tên sản phẩm</th><th>Đơn giá</th><th>Số lượng</th><th>Hành động</th></tr>
+                        <tr><th>Mã</th><th>Tên</th><th>Giá</th><th>Ảnh sản phẩm</th><th>Hành động</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>SP001</td><td>Áo thun FitPro</td><td>250,000₫</td><td>120</td><td><button>Sửa</button></td></tr>
+                        <tr>
+                            <td>SP001</td>
+                            <td>Áo thun FitPro</td>
+                            <td>250,000₫</td>
+                            <td>
+                                <img src="https://via.placeholder.com/80"
+                                     class="img-thumbnail"
+                                     style="width:80px; height:80px; object-fit:cover;">
+                            </td>
+                            <td><button>Sửa</button></td>
+                        </tr>
                     </tbody>
                 </table>
             </section>
 
-            <!-- Quản lý khách hàng -->
+            <!-- Khách hàng -->
             <section id="customer" class="card" style="display:none;">
                 <div class="title">Quản lý khách hàng</div>
                 <button>Thêm khách hàng</button>
+
                 <table>
                     <thead>
-                        <tr><th>Mã KH</th><th>Tên khách hàng</th><th>SĐT</th><th>Email</th><th>Hành động</th></tr>
+                        <tr><th>Mã</th><th>Tên</th><th>SĐT</th><th>Địa chỉ</th><th>Hành động</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>KH001</td><td>Trần B</td><td>0987xxx</td><td>tranb@mail.com</td><td><button>Sửa</button></td></tr>
+                        <tr><td>KH001</td><td>Trần B</td><td>0987xxx</td><td>Long Xuyên</td><td><button>Sửa</button></td></tr>
                     </tbody>
                 </table>
             </section>
 
-            <!-- Quản lý hóa đơn -->
+            <!-- Hóa đơn -->
             <section id="invoice" class="card" style="display:none;">
-                <div class="title">Quản lý hóa đơn bán hàng</div>
+                <div class="title">Hóa đơn bán hàng</div>
                 <button>Thêm hóa đơn</button>
+
                 <table>
                     <thead>
-                        <tr><th>Mã HĐ</th><th>Khách hàng</th><th>Ngày bán</th><th>Tổng tiền</th><th>Hành động</th></tr>
+                        <tr><th>Mã</th><th>KH</th><th>Ngày</th><th>Tổng tiền</th><th>Hành động</th></tr>
                     </thead>
                     <tbody>
                         <tr><td>HD001</td><td>Trần B</td><td>2025-11-18</td><td>1,200,000₫</td><td><button>Xem</button></td></tr>
@@ -230,77 +236,212 @@
                 </table>
             </section>
 
-            <!-- Quản lý kho -->
+            <!-- Kho -->
             <section id="warehouse" class="card" style="display:none;">
-                <div class="title">Quản lý xuất - nhập - tồn kho</div>
+                <div class="title">Xuất - Nhập - Tồn kho</div>
                 <button>Thêm phiếu</button>
+
                 <table>
                     <thead>
-                        <tr><th>Mã phiếu</th><th>Loại</th><th>Ngày</th><th>Số lượng</th><th>Hành động</th></tr>
+                        <tr><th>Mã</th><th>Loại</th><th>Ngày</th><th>SL</th><th>Giá bán</th><th>Hành động</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>PX001</td><td>Nhập</td><td>2025-11-17</td><td>500</td><td><button>Xem</button></td></tr>
+                        <tr><td>PX001</td><td>Nhập</td><td>2025-11-17</td><td>500</td><td>300.000 đồng</td><td><button>Xem</button></td></tr>
                     </tbody>
                 </table>
             </section>
 
-            <!-- Quản lý người dùng -->
+            <!-- Người dùng -->
             <section id="user" class="card" style="display:none;">
-                <div class="title">Quản lý người dùng</div>
+                <div class="title">Người dùng</div>
                 <button>Thêm người dùng</button>
+
                 <table>
                     <thead>
-                        <tr><th>ID</th><th>Tên người dùng</th><th>Email</th><th>Vai trò</th><th>Hành động</th></tr>
+                        <tr><th>ID</th><th>Tài khoản</th><th>Mật khẩu</th><th>Tên</th><th>Email</th><th>Địa chỉ</th><th>Ngày tạo</th><th>SDT</th><th>Vai trò</th><th>Hành động</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>U001</td><td>admin</td><td>admin@mail.com</td><td>Quản trị viên</td><td><button>Sửa</button></td></tr>
+                        <tr><td>U001</td><td>admin</td><td>12345</td><td>Trần Văn Louis</td><td>admin@mail.com</td><td>Japan</td><td>19-11-2025</td><td>0914xxxxxx</td><td>Quản trị viên</td><td><button>Sửa</button></td></tr>
                     </tbody>
                 </table>
             </section>
 
-            <!-- Thống kê - báo cáo -->
+            <!-- Thống kê -->
             <section id="report" class="card" style="display:none;">
                 <div class="title">Thống kê - Báo cáo</div>
-                <p>Biểu đồ và báo cáo tổng hợp doanh thu, hàng tồn, khách hàng...</p>
+                <p>Báo cáo doanh thu, kho, khách hàng...</p>
             </section>
 
         </main>
     </div>
 
+
+    <!-- ======================= MODAL SẢN PHẨM ======================= -->
+
+    <div class="modal fade" id="productModal" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title text-primary fw-bold">Thêm sản phẩm</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <!-- Tabs -->
+                    <ul class="nav nav-tabs fw-semibold">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#info">Thông tin sản phẩm</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#variant">Biến thể sản phẩm</button>
+                        </li>
+                    </ul>
+
+                    <!-- Tab content -->
+                    <div class="tab-content mt-4">
+
+                        <!-- ========== TAB 1: FORM SẢN PHẨM ========== -->
+                        <div id="info" class="tab-pane fade show active">
+
+                            <h5 class="fw-bold mb-3 text-primary">Danh sách sản phẩm</h5>
+
+                            <div class="table-responsive">
+                                <table class="table align-middle table-bordered">
+                                    <thead class="table-light">
+                                        <tr class="fw-semibold text-center">
+                                            <th width="60px">ID</th>
+                                            <th width="200px">Tên sản phẩm</th>
+                                            <th>Mô tả</th>
+                                            <th width="250px">Actions</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td>abc</td>
+                                            <td>xyz</td>
+                                            <td>
+                                                <div class="action-buttons">
+                                                    <button class="btn btn-secondary btn-sm">View</button>
+                                                    <button class="btn btn-warning btn-sm">Update</button>
+                                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td>abc</td>
+                                            <td>xyz</td>
+                                            <td>
+                                                <div class="action-buttons">
+                                                    <button class="btn btn-secondary btn-sm">View</button>
+                                                    <button class="btn btn-warning btn-sm">Update</button>
+                                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ========== TAB 2: GRID DEMO ========== -->
+                        <div id="variant" class="tab-pane fade">
+
+                            <h5 class="fw-bold mb-3 text-primary">Danh sách sản phẩm</h5>
+
+                            <div class="table-responsive">
+                                <table class="table align-middle table-bordered">
+                                    <thead class="table-light">
+                                        <tr class="fw-semibold text-center">
+                                            <th width="60px">ID</th>
+                                            <th width="200px">Tên sản phẩm</th>
+                                            <th>Mô tả</th>
+                                            <th width="250px">Actions</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td>abc</td>
+                                            <td>xyz</td>
+                                            <td>
+                                                <div class="action-buttons">
+                                                    <button class="btn btn-secondary btn-sm">View</button>
+                                                    <button class="btn btn-warning btn-sm">Update</button>
+                                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td>abc</td>
+                                            <td>xyz</td>
+                                            <td>
+                                                <div class="action-buttons">
+                                                    <button class="btn btn-secondary btn-sm">View</button>
+                                                    <button class="btn btn-warning btn-sm">Update</button>
+                                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary">Hủy</button>
+                <button class="btn btn-primary px-4">Lưu</button>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
-  // Hiển thị trang theo id và cập nhật active class
-  function showPage(pageId, element) {
-    // ẩn tất cả section trong content
-    document.querySelectorAll('main .card, main section').forEach(sec => {
-      sec.style.display = 'none';
-    });
+        // Hiển thị section đúng menu
+        function showPage(pageId, el) {
+            document.querySelectorAll("main section").forEach(s => s.style.display = "none");
+            document.getElementById(pageId).style.display = "block";
 
-    // hiển thị section mục tiêu
-    const target = document.getElementById(pageId);
-    if (target) target.style.display = 'block';
+            document.querySelectorAll(".menu-item").forEach(i => i.classList.remove("active"));
+            el.classList.add("active");
+        }
 
-    // cập nhật active trên menu
-    document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
-    if (element) element.classList.add('active');
-  }
+        document.querySelectorAll(".menu-item").forEach(item => {
+            item.addEventListener("click", () => {
+                showPage(item.dataset.target, item);
+            });
+        });
 
-  // Gắn sự kiện cho các menu-item (để hỗ trợ click + keyboard)
-  document.querySelectorAll('.menu-item').forEach(item => {
-    item.addEventListener('click', () => showPage(item.getAttribute('data-target'), item));
-    item.addEventListener('keypress', (e) => { if(e.key === 'Enter' || e.key === ' ') showPage(item.getAttribute('data-target'), item); });
-  });
-
-  // Khi load trang, đảm bảo trang home hiển thị
-  document.addEventListener('DOMContentLoaded', () => {
-    const active = document.querySelector('.menu-item.active');
-    if(active) {
-      showPage(active.getAttribute('data-target'), active);
-    } else {
-      // fallback
-      const first = document.querySelector('.menu-item');
-      if(first) showPage(first.getAttribute('data-target'), first);
-    }
-  });
+        showPage("home", document.querySelector(".menu-item.active"));
     </script>
 
 </body>
