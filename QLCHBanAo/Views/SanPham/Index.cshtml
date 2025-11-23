@@ -1,0 +1,80 @@
+﻿@model IEnumerable<QLCHBanAo.Models.SanPham>
+
+@{
+    ViewData["Title"] = "Quản lý sản phẩm";
+}
+<section id="product" class="card">
+    <div class="title">Quản lý sản phẩm</div>
+
+    <!-- Nút mở modal -->
+    <a class="btn btn-primary" asp-action="Create">
+        Thêm sản phẩm
+    </a>
+
+    <table class="mt-3 table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Mã</th>
+                <th>Tên</th>
+                <th>Mô tả</th>
+                <th>Giá / Số biến thể</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var item in Model)
+                {
+                    var soBienThe = item.BienThe?.Count;
+                    var giaThapNhatList = item.BienThe?
+                        .SelectMany(b => b.TonKhoSP ?? Enumerable.Empty<QLCHBanAo.Models.TonKhoSP>())
+                    .Where(t => t != null && t.DonGia > 0)
+                    .Select(t => t.DonGia)
+                    .ToList();
+                    var giaThapNhat = giaThapNhatList != null && giaThapNhatList.Any() ? giaThapNhatList.Min() : 0;
+
+                    <tr>
+                        <td>SP@(item.Id.ToString("D3"))</td>
+                        <td>@item.TenSanPham</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.MoTa))
+                            {
+                                <span class="text-truncate" style="max-width: 200px; display: inline-block;">
+                                    @(item.MoTa.Length > 50 ? item.MoTa.Substring(0, 50) + "..." : item.MoTa)
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="text-muted">Chưa có mô tả</span>
+                            }
+                        </td>
+                        <td>
+                            @if (giaThapNhat > 0)
+                            {
+                                <span>@giaThapNhat.ToString("N0")₫</span>
+                            }
+                            else
+                            {
+                                <span class="text-muted">Chưa có giá</span>
+                            }
+                            <br/>
+                            <small class="text-muted">@(soBienThe ?? 0) biến thể</small>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-action="Details" asp-route-id="@item.Id">Xem</a>
+                            <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Id">Sửa</a>
+                            <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center text-muted">Chưa có sản phẩm nào. <a asp-action="Create">Tạo sản phẩm mới</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

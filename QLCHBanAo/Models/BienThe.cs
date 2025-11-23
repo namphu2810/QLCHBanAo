@@ -14,11 +14,11 @@ namespace QLCHBanAo.Models
 
         public string BienTheHinhAnh { get; set; }
 
-        public SanPham SanPham { get; set; }
-        public MauSac MauSac { get; set; }
-        public KichThuoc KichThuoc { get; set; }
-        public ChatLieu ChatLieu { get; set; }
-        public ThuongHieu ThuongHieu { get; set; }
+        public SanPham? SanPham { get; set; }
+        public MauSac? MauSac { get; set; }
+        public KichThuoc? KichThuoc { get; set; }
+        public ChatLieu? ChatLieu { get; set; }
+        public ThuongHieu? ThuongHieu { get; set; }
 
         public ICollection<TonKhoSP> TonKhoSP { get; set; }
     }

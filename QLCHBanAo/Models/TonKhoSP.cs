@@ -10,8 +10,8 @@
         public int SoLuongTon { get; set; }
         public double DonGia { get; set; }
 
-        public CuaHang CuaHang { get; set; }
-        public BienThe BienThe { get; set; }
+        public CuaHang? CuaHang { get; set; }
+        public BienThe? BienThe { get; set; }
     }
 }
 
