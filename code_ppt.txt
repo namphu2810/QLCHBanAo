@@ -1,0 +1,187 @@
+\documentclass[10pt]{beamer}
+
+% --- Theme ---
+\usetheme{default}
+\usecolortheme{dove}
+\setbeamertemplate{navigation symbols}{} % tắt nút điều khiển
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage[vietnamese]{babel}
+\usepackage{graphicx}
+\usepackage{caption}
+
+% ------------------------------------------------------------
+% BẮT ĐẦU TRÌNH CHIẾU
+% ------------------------------------------------------------
+\begin{document}
+
+% ============================================================
+% SLIDE 1 – TIÊU ĐỀ
+% ============================================================
+\begin{frame}
+\centering
+{\Huge \textbf{WEBSITE QUẢN LÝ CỬA HÀNG BÁN ÁO THUN THỂ THAO NAM}}\\[1cm]
+
+{\small 
+Sinh viên thực hiện: \\
+Trần Thanh Mỹ Kim – DPM225428\\
+Trần Nam Phú – DPM225456\\
+Nguyễn Thiện Trí – DPM225493\\
+Thái Thế Anh – DPM225403\\
+Trần Minh Tuấn – 21PM
+}
+\end{frame}
+
+% ============================================================
+% SLIDE 2 – PHẠM VI DỰ ÁN
+% ============================================================
+\begin{frame}{PHẠM VI DỰ ÁN}
+Các module chức năng chính:
+\begin{itemize}
+    \item Module Quản lý cửa hàng.
+    \item Module Quản lý sản phẩm.
+    \item Module Người dùng & Phân quyền.
+    \item Module Quản lý hóa đơn bán hàng.
+    \item Module Quản lý nhập - xuất & tồn kho.
+    \item Module Quản lý khách hàng.
+    \item Module Thống kê - báo cáo.
+\end{itemize}
+\end{frame}
+
+% ============================================================
+% SLIDE 3 – PHẠM VI DỰ ÁN (HÌNH 1)
+% ============================================================
+\begin{frame}{PHẠM VI DỰ ÁN}
+\centering
+\includegraphics[width=10cm]{WBS.jpg}\\
+{\scriptsize (Chèn hình minh họa phạm vi dự án)}
+\end{frame}
+
+% ============================================================
+% SLIDE 4 – PHẠM VI DỰ ÁN (HÌNH 2)
+% ============================================================
+\begin{frame}{PHẠM VI DỰ ÁN}
+\centering
+\includegraphics[width=10cm]{Main.jpg}\\
+{\scriptsize (Chèn hình sơ đồ hoặc phân rã chức năng)}
+\end{frame}
+
+% ============================================================
+% SLIDE 5 – ƯỚC LƯỢNG USECASE
+% ============================================================
+\begin{frame}{ƯỚC LƯỢNG USECASE}
+\begin{itemize}
+    \item Danh sách các Use Case chính
+    \item Xác định độ phức tạp
+    \item Quy đổi điểm Use Case (UCP)
+\end{itemize}
+\end{frame}
+
+% ============================================================
+% SLIDE 6 – ƯỚC LƯỢNG USECASE
+% ============================================================
+\begin{frame}{ƯỚC LƯỢNG USECASE}
+\centering
+\includegraphics[width=10cm]{usecase-table.png}\\
+{\scriptsize (Chèn bảng đánh giá UCP)}
+\end{frame}
+
+% ============================================================
+% SLIDE 7 – LẬP KẾ HOẠCH
+% ============================================================
+\begin{frame}{LẬP KẾ HOẠCH}
+Xác định tiến độ dự án:
+\begin{itemize}
+    \item Phân tích yêu cầu
+    \item Thiết kế hệ thống
+    \item Lập trình
+    \item Kiểm thử
+    \item Triển khai
+\end{itemize}
+\end{frame}
+
+% ============================================================
+% SLIDE 8
+% ============================================================
+\begin{frame}{LẬP KẾ HOẠCH}
+\centering
+\includegraphics[width=10cm]{schedule1.png}
+\end{frame}
+
+% ============================================================
+% SLIDE 9
+% ============================================================
+\begin{frame}{LẬP KẾ HOẠCH}
+Bảng phân công công việc nhóm.
+\end{frame}
+
+% ============================================================
+% SLIDE 10
+% ============================================================
+\begin{frame}{LẬP KẾ HOẠCH}
+\centering
+\includegraphics[width=10cm]{gantt1.png}
+\end{frame}
+
+% ============================================================
+% SLIDE 11
+% ============================================================
+\begin{frame}{LẬP KẾ HOẠCH}
+\centering
+\includegraphics[width=10cm]{gantt2.png}
+\end{frame}
+
+% ============================================================
+% SLIDE 12 – GIAO DIỆN
+% ============================================================
+\begin{frame}{GIAO DIỆN WEBSITE}
+\centering
+\includegraphics[width=10cm]{gdTrangChu.jpg}
+\end{frame}
+
+% ============================================================
+% SLIDE 13 – GIAO DIỆN
+% ============================================================
+\begin{frame}{GIAO DIỆN WEBSITE}
+\centering
+\includegraphics[width=10cm]{gdQLCH.jpg}
+\end{frame}
+
+% ============================================================
+% SLIDE 14 – GIAO DIỆN
+% ============================================================
+\begin{frame}{GIAO DIỆN WEBSITE}
+\centering
+\includegraphics[width=10cm]{gdQLSP.jpg}
+\end{frame}
+
+% ============================================================
+% SLIDE 15 – GIAO DIỆN
+% ============================================================
+\begin{frame}{GIAO DIỆN WEBSITE}
+\centering
+\includegraphics[width=10cm]{gdCTSP.jpg}
+\end{frame}
+
+% ============================================================
+% SLIDE 16 – GIAO DIỆN
+% ============================================================
+\begin{frame}{GIAO DIỆN WEBSITE}
+\centering
+\includegraphics[width=10cm]{gdCTSP_BT.jpg}
+\end{frame}
+
+% ============================================================
+% SLIDE 17 – CẢM ƠN
+% ============================================================
+\begin{frame}
+\centering
+{\Huge \textbf{CẢM ƠN THẦY VÀ CÁC BẠN ĐÃ LẮNG NGHE!}}\\[1cm]
+\small
+Rất mong nhận được ý kiến đóng góp của mọi người!
+\end{frame}
+
+% ============================================================
+\end{document}
