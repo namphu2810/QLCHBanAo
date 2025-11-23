@@ -15,11 +15,11 @@ INSERT INTO NguoiDung (TaiKhoan, MatKhau, TenNguoiDung, Email, DiaChi, NgayTao, 
 ('quanlye', 'hashed_pass_5', N'Võ Văn E', 'quanlye@aoshop.com', N'Ninh Kiều, Cần Thơ', '2023-05-05', '0916161616', 1, 1);
 
 INSERT INTO SanPham (TenSanPham, MoTa, HinhAnh) VALUES
-(N'Áo Thun Cổ Tròn Basic', N'Áo thun cotton 100%, thoáng mát, form regular fit.', ''),
-(N'Quần Jeans Slim Fit', N'Áo thun chất liệu denim co giãn, phom ôm vừa.', ''),
-(N'Áo Khoác Bomber', N'Áo thun chất liệu dù, chống nước nhẹ, có khóa kéo.', ''),
-(N'Váy Maxi Họa Tiết', N'Áo thun maxi chất liệu voan, phù hợp đi biển/dạo phố.', ''),
-(N'Áo Sơ Mi Oxford', N'Áo thun vải oxford, kiểu dáng classic, dễ ủi.', '');
+(N'Áo Thun Cổ Tròn Basic', N'Áo thun cotton 100%, thoáng mát, form regular fit.', 'anh11.jpg'),
+(N'Quần Jeans Slim Fit', N'Áo thun chất liệu denim co giãn, phom ôm vừa.', 'anh12.jpg'),
+(N'Áo Khoác Bomber', N'Áo thun chất liệu dù, chống nước nhẹ, có khóa kéo.', 'anh13.webp'),
+(N'Váy Maxi Họa Tiết', N'Áo thun maxi chất liệu voan, phù hợp đi biển/dạo phố.', 'anh14.webp'),
+(N'Áo Sơ Mi Oxford', N'Áo thun vải oxford, kiểu dáng classic, dễ ủi.', 'anh15.webp');
 
 INSERT INTO KichThuoc (TenKichThuoc) VALUES
 ('S'),
@@ -52,11 +52,11 @@ INSERT INTO ThuongHieu (TenThuongHieu, DiaChi, HinhAnh) VALUES
 
 INSERT INTO BienThe (SanPham_ID, Color_ID, Size_ID, ThuongHieu_ID, ChatLieu_ID, BienTheHinhAnh, 
                       SanPhamId, MauSacId, KichThuocId, ThuongHieuId, ChatLieuId) VALUES
-(1, 1, 4, 5, 1, 'anh1.jpg',1,1,4,5,1),
-(2, 2, 3, 3, 2, 'anh2.jpg',2,2,3,3,2),
-(4, 4, 3, 1, 4, 'anh3.jpg',4,4,3,1,4),
-(5, 5, 5, 2, 5, 'anh4.jpg',5,5,5,2,5),
-(3, 1, 5, 4, 3, 'anh5.jpg',3,1,5,4,3);
+(1, 1, 4, 5, 1, 'anh11.jpg',1,1,4,5,1),
+(2, 2, 3, 3, 2, 'anh12.jpg',2,2,3,3,2),
+(4, 4, 3, 1, 4, 'anh13.jpg',4,4,3,1,4),
+(5, 5, 5, 2, 5, 'anh14.jpg',5,5,5,2,5),
+(3, 1, 5, 4, 3, 'anh15.jpg',3,1,5,4,3);
 
 INSERT INTO TonKhoSP (CuaHang_ID, BienThe_ID, SoLuongTon, DonGia,CuaHangId,BienTheId) VALUES
 (1, 1, 50, 199000,1,1),
