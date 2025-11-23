@@ -10,38 +10,24 @@
     <link rel="stylesheet" href="~/QLCHBanAo.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">QLCHBanAo</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <div class="layout">
+        <nav class="sidebar">
+            <h2>QUẢN LÝ</h2>
+
+            <a class="menu-item active" data-target="home" asp-controller="DashBoard" asp-action="Index">🏠 Trang chủ</a>
+            <a class="menu-item" data-target="store" asp-controller="CuaHang" asp-action="Index">🏪 Quản lý cửa hàng</a>
+            <a class="menu-item" data-target="product" asp-controller="SanPham" asp-action="Index">📦 Quản lý sản phẩm</a>
+            <div class="menu-item" data-target="customer">🧍‍♂️ Quản lý khách hàng</div>
+            <div class="menu-item" data-target="invoice">🧾 Hóa đơn bán hàng</div>
+            <div class="menu-item" data-target="warehouse">📥 Xuất - nhập - tồn kho</div>
+            <a class="menu-item" data-target="user" asp-controller="NguoiDung" asp-action="Index">👤 Quản lý người dùng</a>
+            <div class="menu-item" data-target="report">📊 Thống kê - Báo cáo</div>
         </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+        <main class="content">
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - QLCHBanAo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
