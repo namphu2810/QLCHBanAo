@@ -1,18 +1,39 @@
 ﻿@model IEnumerable<QLCHBanAo.Models.CuaHang>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Quản lý cửa hàng";
 }
 <section id="store" class="card">
-    <div class="title">Quản lý cửa hàng</div>
-    <button>Thêm cửa hàng</button>
+    <div class="title">@ViewData["Title"]</div>
+    <button class="btn btn-primary">Thêm cửa hàng</button>
 
-    <table class="mt-2">
-        <thead>
-            <tr><th>Mã</th><th>Tên</th><th>Địa chỉ</th><th>Quản lý</th><th>Hành động</th></tr>
+    <table class="mt-3 table table-striped table-hover">
+        <thead class="table-danger">
+            <tr>
+                <th>ID</th>
+                <th>Tên cửa hàng</th>
+                <th>Điạ chỉ</th>
+                <th>SDT</th>
+                <th>Hành động</th>
+            </tr>
         </thead>
         <tbody>
-            <tr><td>CH001</td><td>Quận 1</td><td>123 Lê Lợi</td><td>Nguyễn A</td><td><button>Sửa</button></td></tr>
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.TenCuaHang</td>
+                        <td>@item.DiaChi</td>
+                        <td>@item.SDT</td>
+                        <td>
+                            <button class="btn btn-primary">Xem</button>
+                            <button class="btn btn-warning">Sửa</button>
+                        </td>
+                    </tr>
+                }
+            }
         </tbody>
     </table>
 </section>
