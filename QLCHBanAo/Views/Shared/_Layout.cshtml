@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/QLCHBanAo.styles.css" asp-append-version="true" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
     <div class="layout">
@@ -17,9 +18,9 @@
             <a class="menu-item active" data-target="home" asp-controller="DashBoard" asp-action="Index">🏠 Trang chủ</a>
             <a class="menu-item" data-target="store" asp-controller="CuaHang" asp-action="Index">🏪 Quản lý cửa hàng</a>
             <a class="menu-item" data-target="product" asp-controller="SanPham" asp-action="Index">📦 Quản lý sản phẩm</a>
-            <div class="menu-item" data-target="customer">🧍‍♂️ Quản lý khách hàng</div>
-            <div class="menu-item" data-target="invoice">🧾 Hóa đơn bán hàng</div>
-            <div class="menu-item" data-target="warehouse">📥 Xuất - nhập - tồn kho</div>
+            <a class="menu-item" data-target="customer" asp-controller="KhachHang" asp-action="Index">🧍‍♂️ Quản lý khách hàng</a>
+            <a class="menu-item" data-target="invoice" asp-controller="HoaDon" asp-action="Index">🧾 Hóa đơn bán hàng</a>
+            <a class="menu-item" data-target="warehouse" asp-controller="PhieuNhap" asp-action="Index">📥 Xuất - nhập - tồn kho</a>
             <a class="menu-item" data-target="user" asp-controller="NguoiDung" asp-action="Index">👤 Quản lý người dùng</a>
             <div class="menu-item" data-target="report">📊 Thống kê - Báo cáo</div>
         </nav>

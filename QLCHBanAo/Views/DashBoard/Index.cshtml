@@ -1,12 +1,180 @@
 ﻿<section id="home" class="card">
     <div class="title">Dashboard</div>
     <div class="dashboard-grid">
-        <div class="dash-box">Tổng sản phẩm<br><small>120</small></div>
+        <div class="dash-box">Tổng sản phẩm<br><small>20</small></div>
         <div class="dash-box">Tổng cửa hàng<br><small>8</small></div>
-        <div class="dash-box">Tổng khách hàng<br><small>310</small></div>
-        <div class="dash-box">Hóa đơn hôm nay<br><small>45</small></div>
-        <div class="dash-box">Tồn kho<br><small>2450 SP</small></div>
-        <div class="dash-box">Người dùng<br><small>15</small></div>
+        <div class="dash-box">Tổng khách hàng<br><small>15</small></div>
+        <div class="dash-box">Hóa đơn<br><small>20</small></div>
+        <div class="dash-box">Tồn kho<br><small>15</small></div>
+        <div class="dash-box">Người dùng<br><small>10</small></div>
+    </div>
+
+    <!-- Biểu đồ -->
+    <div class="charts-container">
+        <!-- Biểu đồ Hóa đơn -->
+        <div class="chart-card">
+            <h5 class="fw-bold mb-3 text-primary">Biểu đồ Hóa đơn</h5>
+            <div class="chart-wrapper">
+                <canvas id="hoaDonChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Biểu đồ Phiếu nhập -->
+        <div class="chart-card">
+            <h5 class="fw-bold mb-3 text-primary">Biểu đồ Phiếu nhập</h5>
+            <div class="chart-wrapper">
+                <canvas id="phieuNhapChart"></canvas>
+            </div>
+        </div>
     </div>
 </section>
+
+<style>
+    .charts-container {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .chart-card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 20px;
+    }
+
+    .chart-wrapper {
+        position: relative;
+        height: 400px;
+        width: 100%;
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Biểu đồ Hóa đơn - Doanh thu theo tháng
+        const ctxHoaDon = document.getElementById('hoaDonChart').getContext('2d');
+        const hoaDonChart = new Chart(ctxHoaDon, {
+            type: 'line',
+            data: {
+                labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 
+                         'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
+                datasets: [{
+                    label: 'Doanh thu (triệu VNĐ)',
+                    data: [125, 180, 210, 195, 240, 280, 320, 290, 350, 380, 420, 450],
+                    borderColor: 'rgb(75, 192, 192)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    tension: 0.4,
+                    fill: true
+                }, {
+                    label: 'Số lượng hóa đơn',
+                    data: [45, 52, 58, 55, 62, 68, 75, 70, 80, 85, 90, 95],
+                    borderColor: 'rgb(255, 99, 132)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    tension: 0.4,
+                    fill: true,
+                    yAxisID: 'y1'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Doanh thu (triệu VNĐ)'
+                        }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: {
+                            display: true,
+                            text: 'Số lượng hóa đơn'
+                        },
+                        grid: {
+                            drawOnChartArea: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // Biểu đồ Phiếu nhập - Giá trị nhập theo tháng
+        const ctxPhieuNhap = document.getElementById('phieuNhapChart').getContext('2d');
+        const phieuNhapChart = new Chart(ctxPhieuNhap, {
+            type: 'bar',
+            data: {
+                labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 
+                         'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
+                datasets: [{
+                    label: 'Giá trị nhập (triệu VNĐ)',
+                    data: [180, 220, 195, 240, 210, 250, 280, 260, 300, 320, 290, 350],
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }, {
+                    label: 'Số lượng phiếu nhập',
+                    data: [15, 18, 16, 20, 17, 22, 25, 23, 28, 30, 27, 32],
+                    backgroundColor: 'rgba(255, 206, 86, 0.6)',
+                    borderColor: 'rgba(255, 206, 86, 1)',
+                    borderWidth: 1,
+                    yAxisID: 'y1'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Giá trị nhập (triệu VNĐ)'
+                        },
+                        beginAtZero: true
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: {
+                            display: true,
+                            text: 'Số lượng phiếu nhập'
+                        },
+                        beginAtZero: true,
+                        grid: {
+                            drawOnChartArea: false
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
 
