@@ -34,7 +34,17 @@ INSERT INTO SanPham (TenSanPham, MoTa, HinhAnh) VALUES
 (N'Áo Tập Gym Compression', N'Áo thun bó cơ, chất liệu co giãn 4 chiều, hỗ trợ cơ bắp.', 'anh17.webp'),
 (N'Áo Chạy Bộ Phản Quang', N'Vải Poly Mesh thoáng khí, có chi tiết phản quang an toàn khi chạy đêm.', 'anh18.webp'),
 (N'Áo Polo Thể Thao Golf', N'Cổ bẻ Pique, chống tia UV, thoáng mát cho môn Golf/Tennis.', 'anh19.webp'),
-(N'Áo Tank Top Thể Hình', N'Thiết kế không tay (sát nách), form rộng rãi, cotton pha spandex.', 'anh20.webp');
+(N'Áo Tank Top Thể Hình', N'Thiết kế không tay (sát nách), form rộng rãi, cotton pha spandex.', 'anh20.webp'),
+(N'Áo Thun Tập Luyện Công Nghệ HEATGEAR', N'Chất liệu Poly Spandex co giãn, làm mát nhanh, thích hợp cho buổi tập cường độ cao.', 'anh31.webp'),
+(N'Áo Polo Dry Fit Golf Màu Trắng', N'Vải Pique Dry Fit thoáng khí, có công nghệ chống tia UV, cổ bẻ mềm mại.', 'anh32.webp'),
+(N'Áo Tank Top Sát Nách Running', N'Thiết kế khoét sâu, vải lưới (Mesh) siêu nhẹ, tối ưu hóa sự thông thoáng khi chạy.', 'anh33.webp'),
+(N'Áo Compression Cổ Tròn Dài Tay', N'Áo bó cơ hỗ trợ phục hồi, giữ ấm nhẹ, thích hợp mặc lót khi tập ngoài trời.', 'anh34.webp'),
+(N'Áo Phông Thể Thao Phom Regular', N'Cotton pha polyester, thấm hút mồ hôi vừa phải, kiểu dáng cơ bản, thích hợp mặc hàng ngày.', 'anh35.webp'),
+(N'Áo Chạy Trail Quick-Dry', N'Vải nhanh khô (Quick-Dry), thiết kế ergonomic ôm vai, có in chi tiết phản quang.', 'anh36.webp'),
+(N'Áo Polo Tennis V-Neck', N'Cổ chữ V hiện đại, chất liệu nhẹ, co giãn 4 chiều, giúp thoải mái khi giao bóng.', 'anh37.webp'),
+(N'Áo Thun Bóng Rổ Reversible', N'Áo hai mặt (reversible), chất liệu Poly Mesh lỗ lớn, thoáng khí, form rộng rãi.', 'anh38.webp'),
+(N'Áo Tập Gym Không Đường May (Seamless)', N'Công nghệ Seamless (không đường may), giảm ma sát tối đa, tăng cường độ bền.', 'anh39.webp'),
+(N'Áo Phông Thể Thao Eco-Friendly', N'Chất liệu tái chế (Recycled Polyester), siêu nhẹ, góp phần bảo vệ môi trường.', 'anh40.webp');
 
 INSERT INTO KichThuoc (TenKichThuoc) VALUES
 ('S'),
