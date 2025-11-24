@@ -34,8 +34,32 @@ Trần Minh Tuấn – 21PM
 }
 \end{frame}
 
+% ===============================
+% SLIDE 2 – MỤC LỤC
+% ===============================
+\begin{frame}{MỤC LỤC}
+\begin{itemize}
+    \item \textbf{Phạm vi dự án}
+    \item \textbf{Ước lượng Usecase}
+    \item \textbf{Lập kế hoạch}
+    \item \textbf{Một số giao diện}
+\end{itemize}
+\end{frame}
+
+% ===============================
+% SLIDE 3 – NHẤN MẠNH PHẠM VI DỰ ÁN
+% ===============================
+\begin{frame}{MỤC LỤC}
+\begin{itemize}
+    \item \textbf{Phạm vi dự án}
+    \item \textcolor{gray}{Ước lượng Usecase}
+    \item \textcolor{gray}{Lập kế hoạch}
+    \item \textcolor{gray}{Một số giao diện}
+\end{itemize}
+\end{frame}
+
 % ============================================================
-% SLIDE 2 – PHẠM VI DỰ ÁN
+% SLIDE 4 – PHẠM VI DỰ ÁN
 % ============================================================
 \begin{frame}{PHẠM VI DỰ ÁN}
 Các module chức năng chính:
@@ -51,86 +75,171 @@ Các module chức năng chính:
 \end{frame}
 
 % ============================================================
-% SLIDE 3 – PHẠM VI DỰ ÁN (HÌNH 1)
+% SLIDE 5 – PHẠM VI DỰ ÁN (HÌNH 1)
 % ============================================================
-\begin{frame}{PHẠM VI DỰ ÁN}
+\begin{frame}{PHẠM VI DỰ ÁN (tt)}
 \centering
 \includegraphics[width=10cm]{WBS.jpg}\\
-{\scriptsize (Chèn hình minh họa phạm vi dự án)}
+{\scriptsize Sơ đồ WBS website Quản lý cửa hàng bán áo thun thể thao nam}
 \end{frame}
 
 % ============================================================
-% SLIDE 4 – PHẠM VI DỰ ÁN (HÌNH 2)
+% SLIDE 6 – PHẠM VI DỰ ÁN (HÌNH 2)
 % ============================================================
-\begin{frame}{PHẠM VI DỰ ÁN}
+\begin{frame}{PHẠM VI DỰ ÁN (tt)}
 \centering
 \includegraphics[width=10cm]{Main.jpg}\\
-{\scriptsize (Chèn hình sơ đồ hoặc phân rã chức năng)}
+{\scriptsize Sơ đồ Class}
 \end{frame}
 
-% ============================================================
-% SLIDE 5 – ƯỚC LƯỢNG USECASE
-% ============================================================
-\begin{frame}{ƯỚC LƯỢNG USECASE}
+% ===============================
+% SLIDE 7 – NHẤN MẠNH ƯỚC LƯỢNG USECASE
+% ===============================
+\begin{frame}{MỤC LỤC}
 \begin{itemize}
-    \item Danh sách các Use Case chính
-    \item Xác định độ phức tạp
-    \item Quy đổi điểm Use Case (UCP)
+    \item \textcolor{gray}{Phạm vi dự án}
+    \item \textbf{Ước lượng Usecase}
+    \item \textcolor{gray}{Lập kế hoạch}
+    \item \textcolor{gray}{Một số giao diện}
 \end{itemize}
 \end{frame}
 
 % ============================================================
-% SLIDE 6 – ƯỚC LƯỢNG USECASE
+% SLIDE 5 – ƯỚC LƯỢNG USECASE (LaTeX tối ưu)
 % ============================================================
 \begin{frame}{ƯỚC LƯỢNG USECASE}
-\centering
-\includegraphics[width=10cm]{usecase-table.png}\\
-{\scriptsize (Chèn bảng đánh giá UCP)}
+
+% Tăng khoảng cách dòng
+\setlength{\baselineskip}{1.15\baselineskip}
+
+% Giảm khoảng cách giữa các dòng trong itemize
+\begin{itemize}\setlength{\itemsep}{6pt}
+    \item Tổng giá trị điểm tác nhân (UAW): \textbf{9}
+    \item Tổng giá trị điểm trường hợp sử dụng (UUCW): \textbf{140}
+    \item Tổng điểm trường hợp sử dụng chưa điều chỉnh:
+    \[
+        UUCP = UAW + UUCW = 9 + 140 = \mathbf{149}
+    \]
+    \item Yếu tố phức tạp kỹ thuật:
+    \[
+        TCF = \mathbf{0.69}, \quad \text{tổng TF} = \mathbf{9}
+    \]
+    \item Yếu tố phức tạp môi trường:
+    \[
+        EF = \mathbf{1.22}
+    \]
+    \item Giá trị điểm trường hợp sử dụng đã điều chỉnh:
+    \[
+        UCP = \mathbf{125.42}
+    \]
+    \item Ước lượng nỗ lực (mỗi 1 UCP cần 20 giờ công):
+    \[
+        E = \frac{125.42 \times 20}{8 \times 22} = \mathbf{14}
+    \]
+\end{itemize}
+\end{frame}
+
+% ===============================
+% SLIDE 4 – NHẤN MẠNH LẬP KẾ HOẠCH
+% ===============================
+\begin{frame}{MỤC LỤC}
+\begin{itemize}
+    \item \textcolor{gray}{Phạm vi dự án}
+    \item \textcolor{gray}{Ước lượng Usecase}
+    \item \textbf{Lập kế hoạch}
+    \item \textcolor{gray}{Một số giao diện}
+\end{itemize}
 \end{frame}
 
 % ============================================================
 % SLIDE 7 – LẬP KẾ HOẠCH
 % ============================================================
 \begin{frame}{LẬP KẾ HOẠCH}
-Xác định tiến độ dự án:
-\begin{itemize}
-    \item Phân tích yêu cầu
-    \item Thiết kế hệ thống
-    \item Lập trình
-    \item Kiểm thử
-    \item Triển khai
+
+Ước lượng điểm Use case:\\
+\begin{itemize}\setlength{\itemsep}{6pt}
+    Theo ước lượng use case có 140 x 20 / 8 = 350 ngày công; nhóm có 5 thành viên => 350 / 5 = 70 ngày / 5 người.
 \end{itemize}
+Ước lượng thời gian:\\
+\begin{itemize}\setlength{\itemsep}{6pt}
+    \item Khởi động dự án: 5 ngày / 5 người
+    \item Thu thập yêu cầu: 7 ngày / 5 người
+    \item Phân tích hệ thống: 12 ngày / 5 người
+    \item Thiết kế hệ thống: 8 ngày / 5 người
+    \item Cài đặt hệ thống: 18 ngày / 5 người
+    \item Kiểm thử: 10 ngày / 5 người
+    \item Bảo trì: 10 ngày / 5 người
+\end{itemize}
+\begin{itemize}\setlength{\itemsep}{6pt}
+    Tổng thời gian để hoàn thành dự án là: 70 ngày với 5 thành viên.
+\end{itemize}
+\end{frame}
+
+% ============================================================
+% SLIDE 7 – LẬP KẾ HOẠCH
+% ============================================================
+\begin{frame}{LẬP KẾ HOẠCH (tt)}
+Ước lượng chi phí:\\
+\begin{itemize}\setlength{\itemsep}{6pt}
+    \item Thời gian dự kiến hoàn thành dự án: 70 ngày
+    \item Chi phí phục vụ cho mỗi ngày làm việc: 50.000VND/1 nhân viên
+    \item Bằng phương pháp bottom-up, tổng chi phí để hoàn thành đề án là: 17.500.000 VND
+\end{itemize}
+\centering
+\includegraphics[width=10cm]{WBS_CP.jpg}\\
 \end{frame}
 
 % ============================================================
 % SLIDE 8
 % ============================================================
-\begin{frame}{LẬP KẾ HOẠCH}
-\centering
-\includegraphics[width=10cm]{schedule1.png}
+\begin{frame}{LẬP KẾ HOẠCH (tt)}
+Lập lịch biểu:\\
+\begin{center}
+\includegraphics[width=0.45\textwidth]{lich_1.png}\\
+\includegraphics[width=0.45\textwidth]{lich_2.png}
+\end{center}
 \end{frame}
 
 % ============================================================
 % SLIDE 9
 % ============================================================
-\begin{frame}{LẬP KẾ HOẠCH}
-Bảng phân công công việc nhóm.
+\begin{frame}{LẬP KẾ HOẠCH (tt)}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{gantt_1.png}\\
+\includegraphics[width=0.45\textwidth]{gantt_2_final.png}
+\end{center}
 \end{frame}
 
 % ============================================================
 % SLIDE 10
 % ============================================================
-\begin{frame}{LẬP KẾ HOẠCH}
-\centering
-\includegraphics[width=10cm]{gantt1.png}
+\begin{frame}{LẬP KẾ HOẠCH (tt)}
+Phân bổ tài nguyên:\\
+\begin{center}
+\includegraphics[width=0.45\textwidth]{lich100_1.png}\\
+\includegraphics[width=0.45\textwidth]{lich100_2.png}
+\end{center}
 \end{frame}
 
 % ============================================================
 % SLIDE 11
 % ============================================================
-\begin{frame}{LẬP KẾ HOẠCH}
+\begin{frame}{LẬP KẾ HOẠCH (tt)}
 \centering
-\includegraphics[width=10cm]{gantt2.png}
+\includegraphics[width=0.45\textwidth]{100_1.png}\\
+\includegraphics[width=0.45\textwidth]{100_2.png}
+\end{frame}
+
+% ===============================
+% SLIDE 5 – NHẤN MẠNH GIAO DIỆN
+% ===============================
+\begin{frame}{MỤC LỤC}
+\begin{itemize}
+    \item \textcolor{gray}{Phạm vi dự án}
+    \item \textcolor{gray}{Ước lượng Usecase}
+    \item \textcolor{gray}{Lập kế hoạch}
+    \item \textbf{Một số giao diện}
+\end{itemize}
 \end{frame}
 
 % ============================================================
@@ -138,39 +247,44 @@ Bảng phân công công việc nhóm.
 % ============================================================
 \begin{frame}{GIAO DIỆN WEBSITE}
 \centering
-\includegraphics[width=10cm]{gdTrangChu.jpg}
+\includegraphics[width=10cm]{gdTrangChu.jpg}\\
+{\scriptsize Giao diện trang chủ}
 \end{frame}
 
 % ============================================================
 % SLIDE 13 – GIAO DIỆN
 % ============================================================
-\begin{frame}{GIAO DIỆN WEBSITE}
+\begin{frame}{GIAO DIỆN WEBSITE (tt)}
 \centering
-\includegraphics[width=10cm]{gdQLCH.jpg}
+\includegraphics[width=10cm]{gdQLCH.jpg}\\
+{\scriptsize Giao diện trang Quản lý cửa hàng}
 \end{frame}
 
 % ============================================================
 % SLIDE 14 – GIAO DIỆN
 % ============================================================
-\begin{frame}{GIAO DIỆN WEBSITE}
+\begin{frame}{GIAO DIỆN WEBSITE (tt)}
 \centering
-\includegraphics[width=10cm]{gdQLSP.jpg}
+\includegraphics[width=10cm]{gdQLSP.jpg}\\
+{\scriptsize Giao diện trang Quản lý sản phẩm}
 \end{frame}
 
 % ============================================================
 % SLIDE 15 – GIAO DIỆN
 % ============================================================
-\begin{frame}{GIAO DIỆN WEBSITE}
+\begin{frame}{GIAO DIỆN WEBSITE (tt)}
 \centering
-\includegraphics[width=10cm]{gdCTSP.jpg}
+\includegraphics[width=10cm]{gdCTSP.jpg}\\
+{\scriptsize Giao diện trang Chi tiết sản phẩm}
 \end{frame}
 
 % ============================================================
 % SLIDE 16 – GIAO DIỆN
 % ============================================================
-\begin{frame}{GIAO DIỆN WEBSITE}
+\begin{frame}{GIAO DIỆN WEBSITE (tt)}
 \centering
-\includegraphics[width=10cm]{gdCTSP_BT.jpg}
+\includegraphics[width=10cm]{gdCTSP_BT.jpg}\\
+{\scriptsize Giao diện trang Chi tiết biến thể sản phẩm}
 \end{frame}
 
 % ============================================================
